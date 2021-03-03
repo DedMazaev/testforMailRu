@@ -1,0 +1,42 @@
+def testedstr(f):
+    a="The Answer is "
+    return a+f
+
+def testedlist():
+    a = ["sendhelp", 6, 7, 0]
+    return a
+
+def testedlist2(z):
+    a = ["sendhelp", 6, 7, 0]
+    a.append(z)
+    return a
+
+
+def testlist1(): ##list is not empty
+    assert len(testedlist())!=0
+
+def testlist2(): ##list is not empty
+    assert 3 in testedlist2(3)
+
+
+def testlist3(): #negative list test without error
+    try:
+        assert 9 in testedlist()
+    except AssertionError:
+        pass
+
+
+
+def teststr1():
+    try:
+        assert testedstr("42")=="The Answer is 42"
+    except SyntaxError:
+        pass
+
+def teststr2():
+    assert len(testedstr("42")) != 30
+
+def teststr3():
+    assert 42 in (testedstr("42"))
+
+
